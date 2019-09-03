@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.keven.springDemo.mapper.UserMapper" >
+    <resultMap id="BaseResultMap" type="com.keven.springDemo.entity.User" >
+        <id column="userid" property="userid" jdbcType="VARCHAR" />
+        <result column="usernm" property="usernm" jdbcType="VARCHAR" />
+        <result column="userpw" property="userpw" jdbcType="VARCHAR" />
+        <result column="uemail" property="uemail" jdbcType="VARCHAR" />
+        <result column="uphone" property="uphone" jdbcType="VARCHAR" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+        userid, usernm, userpw, uemail,uphone
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        select
+        <include refid="Base_Column_List" />
+        from user
+        where userid = #{userid,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+        delete from user
+        where userid = #{userid,jdbcType=VARCHAR}
+    </delete>
+    <insert id="insert" parameterType="com.keven.springDemo.entity.User" >
+        insert into user (userid, usernm, userpw,uemail,
+        uphone)
+        values (#{userid,jdbcType=VARCHAR}, #{usernm,jdbcType=VARCHAR}, #{userpw,jdbcType=VARCHAR},#{uemail,jdbcType=VARCHAR},
+        #{uphone,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.keven.springDemo.entity.User" >
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="userid != null" >
+                userid,
+            </if>
+            <if test="usernm != null" >
+                usernm,
+            </if>
+            <if test="userpw != null" >
+                userpw,
+            </if>
+            <if test="uemail != null" >
+                uemail,
+            </if>
+             <if test="uphone != null" >
+                uphone,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="userid != null" >
+                #{userid,jdbcType=VARCHAR},
+            </if>
+            <if test="usernm != null" >
+                #{usernm,jdbcType=VARCHAR},
+            </if>
+            <if test="userpw != null" >
+                #{userpw,jdbcType=VARCHAR},
+            </if>
+            <if test="uemail != null" >
+                #{uemail,jdbcType=VARCHAR},
+            </if>
+            <if test="uphone != null" >
+                #{uphone,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.keven.springDemo.entity.User" >
+        update user
+        <set >
+            <if test="usernm != null" >
+                user_name = #{usernm,jdbcType=VARCHAR},
+            </if>
+            <if test="userpw != null" >
+                userpw = #{userpw,jdbcType=VARCHAR},
+            </if>
+            <if test="uemail != null" >
+                uemail = #{uphone,jdbcType=VARCHAR},
+            </if>
+            <if test="uphone != null" >
+                uphone = #{uphone,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.keven.springDemo.entity.User" >
+        update user
+        set usernm = #{usernm,jdbcType=VARCHAR},
+        userpw = #{userpw,jdbcType=VARCHAR},
+        uemail = #{uemail,jdbcType=VARCHAR}
+        uphone = #{uphone,jdbcType=VARCHAR}
+        where userid= #{userid,jdbcType=VARCHAR}
+    </update>
+ 
+    <select id="selectAllUser" resultMap="BaseResultMap" >
+        select
+        <include refid="Base_Column_List" />
+        from user
+    </select>
+ 
+</mapper>
