@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<!-- <properties resource="mybatis.properties" /> -->
+	<classPathEntry
+		location="D:\Sunline\m2\Ali_Repository\mysql\mysql-connector-java\8.0.13\mysql-connector-java-8.0.13.jar" />
+	<context id="msqlTables" targetRuntime="MyBatis3">
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+		<jdbcConnection
+			connectionURL="jdbc:mysql://192.168.218.23:3306/spring?serverTimezone=GMT%2B8"
+			driverClass="com.mysql.cj.jdbc.Driver" password="123456"
+			userId="root">
+
+			<property name="nullCatalogMeansCurrent" value="true" />
+		</jdbcConnection>
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<javaModelGenerator
+			targetPackage="com.keven.springDemo.model"
+			targetProject="springDemo\src\main\java">
+			<property name="enableSubPackages" value="true" />
+			<!-- 从数据库返回的值被清理前后的空格 -->
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="mapping"
+			targetProject="springDemo\src\main\resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.keven.springDemo.mapper"
+			targetProject="springDemo\src\main\java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<!--数据库表 -->
+		<table tableName="user_info" domainObjectName="User"
+			enableCountByExample="true" enableUpdateByExample="true"
+			enableDeleteByExample="true" enableSelectByExample="true"
+			selectByExampleQueryId="true">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+		<table tableName="sys_role" domainObjectName="Role"
+			enableCountByExample="true" enableUpdateByExample="true"
+			enableDeleteByExample="true" enableSelectByExample="true"
+			selectByExampleQueryId="true">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+		<table tableName="sys_permission" domainObjectName="Permission"
+			enableCountByExample="true" enableUpdateByExample="true"
+			enableDeleteByExample="true" enableSelectByExample="true"
+			selectByExampleQueryId="true">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+		<table tableName="sys_user_role" domainObjectName="UserRole"
+			enableCountByExample="true" enableUpdateByExample="true"
+			enableDeleteByExample="true" enableSelectByExample="true"
+			selectByExampleQueryId="true">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+		<table tableName="sys_role_permission"
+			domainObjectName="RolePermission" enableCountByExample="false"
+			enableUpdateByExample="true" enableDeleteByExample="true"
+			enableSelectByExample="true" selectByExampleQueryId="true">
+			<property name="useActualColumnNames" value="true" />
+		</table>
+	</context>
+</generatorConfiguration>

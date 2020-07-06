@@ -12,7 +12,7 @@
 	<groupId>com.keven.climb</groupId>
 	<artifactId>springDemo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-    <name>springDemo</name> 
+	<name>springDemo</name>
 	<packaging>war</packaging>
 	<description>Demo project for Spring Boot</description>
 
@@ -135,7 +135,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web-services</artifactId>
 		</dependency>
-       <!--打包时排除tomcat-->
+		<!--打包时排除tomcat -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -145,6 +145,47 @@
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>net.sourceforge.nekohtml</groupId>
+			<artifactId>nekohtml</artifactId>
+			<version>1.9.22</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+
+		<!-- mybatis自动生成mapper -->
+		<!-- https://mvnrepository.com/artifact/org.mybatis.generator/mybatis-generator-core -->
+		<dependency>
+			<groupId>org.mybatis.generator</groupId>
+			<artifactId>mybatis-generator-core</artifactId>
+			<version>1.3.7</version>
+		</dependency>
+
+		<!-- admin server -->
+		<dependency>
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-starter-server</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+
+		<!-- 这里包含了Zookeeper依赖和Dubbo依赖 -->
+		<dependency>
+			<groupId>com.alibaba.boot</groupId>
+			<artifactId>dubbo-spring-boot-starter</artifactId>
+			<version>0.2.0</version>
+		</dependency>
+	    <!--音视频相关 -->
+		<!-- https://mvnrepository.com/artifact/ws.schild/jave-all-deps -->
+		<dependency>
+			<groupId>ws.schild</groupId>
+			<artifactId>jave-all-deps</artifactId>
+			<version>2.7.3</version>
+		</dependency>
+
 
 
 	</dependencies>

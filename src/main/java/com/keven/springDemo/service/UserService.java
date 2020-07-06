@@ -2,14 +2,24 @@ package com.keven.springDemo.service;
 
 import java.util.List;
 
-import com.keven.springDemo.entity.User;
+import com.keven.springDemo.model.Permission;
+import com.keven.springDemo.model.Role;
+import com.keven.springDemo.model.User;
 
 public interface UserService {
 	
-	public User getUserById(String userId);
+	List<Role> findRoles(Integer id);
 	
-	boolean addUser(User record);
+	List<Permission> findPermissions(Integer id);
 	
-	List<User> selectAllUser();
-
+	User findUserById(String uId);
+	
+	int assignDefaultUserRolePermission(User user);
+	
+	List<User> findAllUsers();
+	
+	List<User> findUsersByNameAndPWD(String name,String password);
+	
+	int updateUserInfo(User user);
+	
 }

@@ -1,0 +1,35 @@
+spring:
+    jpa:
+      database: mysql
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+        naming-strategy: org.hibernate.cfg.DefaultComponentSafeNamingStrategy
+      properties:
+         hibernate:
+            dialect: org.hibernate.dialect.MySQL5Dialect
+    
+    application:
+      name: block-dubbo-provider
+
+#1）提供方配置
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 7007
+  connection-timeout: 5000ms
+# Dubbo 配置文件
+dubbo:
+  application:
+    name: block-dubbo-provider
+  registry:
+    address: 192.168.218.23:2181
+    protocol: zookeeper
+  protocol:
+    name: dubbo
+    port: 20880
+  scan:
+    base-packages: com.keven.springDemo.providers
+    

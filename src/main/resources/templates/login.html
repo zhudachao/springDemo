@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>thymeleaf登陆</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+</head>
+<body> 
+<div id="idiv">
+    <form action="/dologin" method="post">
+    请输入姓名<input id="name" name="name" required="required"><br><br>
+    请输入密码<input id="password" name="password" type="password" placeholder="仅支持正整数" required="required"><br><br>
+        <input type="submit" value="登录"> &nbsp;<button> <a href="/goregister">注册</a></button>
+    </form>
+</div>
+</body>
+<script>
+    
+</script>
+</html>
