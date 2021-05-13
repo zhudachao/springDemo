@@ -10,7 +10,6 @@ import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.commons.configuration.reloading.FileChangedReloadingStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 
     /**
@@ -23,7 +22,7 @@ import org.springframework.stereotype.Component;
 public enum PropertiesUtils {
     INSTANCE;
 	private static Logger logger = LoggerFactory.getLogger(PropertiesUtils.class);
-	private static PropertiesConfiguration config = null;
+	private PropertiesConfiguration config = null;
 
 	public PropertiesConfiguration getConfig() {
 		return getConfig("/application_dev.properties");

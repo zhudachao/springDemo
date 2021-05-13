@@ -12,6 +12,8 @@ spring:
     application:
       name: block-dubbo-provider
 
+     
+
 #1）提供方配置
 server:
   tomcat:

@@ -1,17 +1,13 @@
 package com.keven.springDemo.utils;
 
-import java.beans.Encoder;
 import java.io.File;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.alibaba.dubbo.container.Main;
-
 import ws.schild.jave.EncoderException;
 import ws.schild.jave.MultimediaInfo;
 import ws.schild.jave.MultimediaObject;
-import ws.schild.jave.VideoSize;
 
 /**
  * 统计目录下视频信息和时长信息
@@ -37,8 +33,8 @@ public class ReadVideo {
 				MultimediaInfo  info =obj.getInfo();				
 				long ls = info.getDuration()/60000;//获取时间 MM
 				String format = info.getFormat();//获取格式
-				int height =info.getVideo().getSize().getHeight();
-				int width =info.getVideo().getSize().getWidth();
+//				int height =info.getVideo().getSize().getHeight();
+//				int width =info.getVideo().getSize().getWidth();
 				logger.info("视频:{}, 时长:{}, 格式:{}",fileName,ls,format);
 				sum = sum+ls;
 				num ++;
