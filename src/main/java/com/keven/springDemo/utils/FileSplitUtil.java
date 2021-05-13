@@ -74,7 +74,8 @@ public class FileSplitUtil {
 		
 //		createBigFile();
 		
-	    Scanner scanner = new Scanner(System.in);
+	    @SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);
 	    scanner.nextLine();
 	    long startTime = System.currentTimeMillis();
 	    splitFile("E://test/big_file.csv",5);

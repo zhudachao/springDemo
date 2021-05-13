@@ -95,7 +95,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
-			<version>1.1.6</version>
+			<version>1.1.18</version>
 		</dependency>
 		<!-- Jpa -->
 		<dependency>
@@ -149,7 +149,6 @@
 		<dependency>
 			<groupId>net.sourceforge.nekohtml</groupId>
 			<artifactId>nekohtml</artifactId>
-			<version>1.9.22</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
@@ -178,7 +177,7 @@
 			<artifactId>dubbo-spring-boot-starter</artifactId>
 			<version>0.2.0</version>
 		</dependency>
-	    <!--音视频相关 -->
+		<!--音视频相关 -->
 		<!-- https://mvnrepository.com/artifact/ws.schild/jave-all-deps -->
 		<dependency>
 			<groupId>ws.schild</groupId>
@@ -186,7 +185,38 @@
 			<version>2.7.3</version>
 		</dependency>
 
+		<!-- cglib动态代理 <dependency> <groupId>cglib</groupId> <artifactId>cglib</artifactId> 
+			<version>3.3.0</version> </dependency> -->
 
+		<!-- json schema 转换 fge -->
+		<dependency>
+			<groupId>com.github.fge</groupId>
+			<artifactId>json-schema-validator</artifactId>
+			<version>2.2.6</version>
+		</dependency>
+		<!-- fasterxml -->
+<!-- 		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.3.0</version>
+		</dependency> -->
+
+		<!-- pdf转图片 -->
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>fontbox</artifactId>
+			<version>2.0.15</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>2.0.15</version>
+		</dependency>
 
 	</dependencies>
 

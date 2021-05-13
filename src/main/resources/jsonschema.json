@@ -1,0 +1,30 @@
+{
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "title": "这是个标题",
+   "description": "校验模板内容json格式",
+   "type": "object",
+   "properties": {
+     "name": { "type": "string" },
+     "age": { "type": "number" },
+     
+     "credit_card": { "type": "number" },
+     "job_arr": {
+       "type": "array",
+       "items": {
+         "type": "string"
+       }
+     },
+     "billing_address": {
+       "type": "object",
+       "properties": {
+         "selfId": {
+           "type": "string"
+         }
+       }
+     }
+   },
+   "dependencies": {
+     "credit_card": ["billing_address"]
+   },
+   "required": ["name"]
+ }
